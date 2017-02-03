@@ -386,10 +386,10 @@ namespace Music_Manager.Controllers
         }
 
         //
-        // POST: /Account/LogOff
+        // POST: /Account/LogOut
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        public ActionResult LogOut()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
