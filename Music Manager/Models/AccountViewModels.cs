@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Net.Http;
 
 namespace Music_Manager.Models
 {
@@ -49,6 +50,10 @@ namespace Music_Manager.Models
     public class LoginViewModel
     {
         [Required]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
@@ -64,6 +69,11 @@ namespace Music_Manager.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "User name")]
+        [System.Web.Mvc.Remote("doesUserNameExist", "Account", HttpMethod = "POST", ErrorMessage = "User name already exists. Please enter a different user name.")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
