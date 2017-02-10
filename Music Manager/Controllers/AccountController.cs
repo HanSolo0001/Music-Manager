@@ -155,7 +155,7 @@ namespace Music_Manager.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    // Turning isPersistent on validated username and email
+                    // Turning isPersistent on validated username and email, but did not validate password as in previous commit
                     await SignInManager.SignInAsync(user, isPersistent:true, rememberBrowser:true);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
