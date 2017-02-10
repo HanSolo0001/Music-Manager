@@ -50,7 +50,7 @@ namespace Music_Manager.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Required]
@@ -70,8 +70,7 @@ namespace Music_Manager.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "User name")]
-        [System.Web.Mvc.Remote("doesUserNameExist", "Account", HttpMethod = "POST", ErrorMessage = "User name already exists. Please enter a different user name.")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Required]
