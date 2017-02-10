@@ -50,8 +50,8 @@ namespace Music_Manager.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Username")]
-        public string Username { get; set; }
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
 
         [Required]
         [Display(Name = "Email")]
