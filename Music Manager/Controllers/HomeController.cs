@@ -13,6 +13,13 @@ namespace Music_Manager.Controllers
             return View();
         }
 
+        public ActionResult Playlist()
+        {
+            ViewBag.Message = "Below are your current playlists. Click on one to view the songs and artists. Alternatively, you can delete a playlist, or add a new playlist.";
+            
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Music Manager is a web app that gives users access to a dynamic music library that lets you add, delete, or modify current artists and song selections in a given playlist. You can also create, delete, or edit a current playlist. In order to use the Music Manager app, please login.";
