@@ -54,16 +54,11 @@ namespace Music_Manager.Models
         public string UserName { get; set; }
 
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
-
-        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Remember me on this computer")]
         public bool RememberMe { get; set; }
     }
 
