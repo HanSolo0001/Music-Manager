@@ -8,12 +8,12 @@ namespace Music_Manager.Models
     /// <summary>
     /// This is the entry of the music for the playlist, and will be logged into the Music Manager app.
     /// </summary>
-    public class Entry
+    public class Songs
     {
         /// <summary>
         /// Default constructor
         /// </summary>
-        public Entry()
+        public Songs()
         {
         }
 
@@ -26,7 +26,7 @@ namespace Music_Manager.Models
         /// <param name="song">The name of the song.</param>
         /// <param name="duration">The duration (in minutes) for the song (how long the song lasts).</param>
         /// <param name="exclude">This is to determine whether or not the song will be excluded when the total minutes on the playlist enty's home page are calculated.</param>
-        public Entry(int id, string artist, string album, string song, double duration, bool exclude = false)
+        public Songs(int id, string artist, string album, string song, double duration, bool exclude = false)
         {
             Id = id;
             Artist = artist;
