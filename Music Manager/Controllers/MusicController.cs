@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using Music_Manager.Models;
+
 
 namespace Music_Manager.Controllers
 {
@@ -14,10 +17,11 @@ namespace Music_Manager.Controllers
             return View();
         }
 
-        // GET: Songs/Details/5
-        public ActionResult Add(int id)
+        // POST: Songs
+        [HttpPost]
+        public ActionResult Add(Song songs)
         {
-            return View();
+            
         }
 
         // GET: Songs/Create

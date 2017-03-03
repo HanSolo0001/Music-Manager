@@ -1,19 +1,31 @@
-﻿using System;
+﻿using Music_Manager.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace Music_Manager.Models
+namespace Music_Manager
 {
+    public class SongDatabase : DbContext
+    {
+        public DbSet<SongDatabase> Songs { get; set; }
+
+        public SongDatabase()
+        {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SongDatabase>());
+        }
+    }
+
     /// <summary>
     /// This is the entry of the music for the playlist, and will be logged into the Music Manager app.
     /// </summary>
-    public class Songs
+    public class Song
     {
         /// <summary>
         /// Default constructor
         /// </summary>
-        public Songs()
+        public Song()
         {
         }
 
@@ -26,12 +38,12 @@ namespace Music_Manager.Models
         /// <param name="song">The name of the song.</param>
         /// <param name="duration">The duration (in minutes) for the song (how long the song lasts).</param>
         /// <param name="exclude">This is to determine whether or not the song will be excluded when the total minutes on the playlist enty's home page are calculated.</param>
-        public Songs(int id, string artist, string album, string song, double duration, bool exclude = false)
+        public Song(int id, string name, string artist, string album, double duration, bool exclude = false)
         {
             Id = id;
+            Name = name;
             Artist = artist;
             Album = album;
-            Song = song;
             Duration = duration;
             Exclude = exclude;
         }
@@ -54,7 +66,7 @@ namespace Music_Manager.Models
         /// <summary>
         ///  The name of the song for the entry.
         /// </summary>
-        public string Song { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         ///  The duration of the song for the entry.
