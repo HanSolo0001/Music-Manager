@@ -76,6 +76,6 @@ namespace Music_Manager
         /// <summary>
         ///  Whether or not this entry should be excluded when calculating the total duration of the current playlist 
         /// </summary>
-        public bool Exclude { get; set; }
+        public bool? Exclude { get; set; }
     }
 }
