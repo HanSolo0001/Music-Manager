@@ -21,7 +21,12 @@ namespace Music_Manager.Controllers
         [HttpPost]
         public ActionResult Add(Song songs)
         {
-            
+            using (var music = new SongDatabase())
+            {
+                var song = new Song { Name = songs.Name, Artist = songs.Artist, Album = songs.Album, Duration = songs.Duration };
+                music.Songs.Add(song);
+                music.SaveChanges();
+            }              
         }
 
         // GET: Songs/Create
