@@ -10,6 +10,11 @@ namespace MusicManager.Models
     /// </summary>
     public class Song
     {
+        public Song()
+        {
+            Artists = new List<AlbumSong>();
+        }
+
         /// <summary>
         ///  The Id of the song.
         /// </summary>
@@ -18,7 +23,7 @@ namespace MusicManager.Models
         /// <summary>
         ///  The name of the song.
         /// </summary>
-        public string Name { get; set; }
+        public string SongName { get; set; }
 
         /// <summary>
         /// The artist of the song.
@@ -33,6 +38,8 @@ namespace MusicManager.Models
         /// <summary>
         ///  Whether or not this song should be excluded when calculating the total duration of the current playlist 
         /// </summary>
-        public bool? Exclude { get; set; }
+        public bool Exclude { get; set; }
+
+        public ICollection<AlbumSong> Artists { get; set; }
     }
 }
