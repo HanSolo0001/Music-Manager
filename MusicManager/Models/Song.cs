@@ -12,7 +12,7 @@ namespace MusicManager.Models
     {
         public Song()
         {
-            Artists = new List<AlbumSong>();
+            Albums = new List<Album>();
         }
 
         /// <summary>
@@ -36,10 +36,18 @@ namespace MusicManager.Models
         public double Duration { get; set; }
 
         /// <summary>
-        ///  Whether or not this song should be excluded when calculating the total duration of the current playlist 
+        ///  Whether or not this song should be excluded when calculating the total duration of the current playlist. 
         /// </summary>
         public bool Exclude { get; set; }
 
-        public ICollection<AlbumSong> Artists { get; set; }
+        /// <summary>
+        /// Navigation property linking the album class to the song class.
+        /// </summary>
+        public virtual ICollection<Album> Albums { get; set; }
+
+        /// <summary>
+        /// Navigation property linking the artist class to the song class.
+        /// </summary>
+        public virtual Artist Artist { get; set; }
     }
 }

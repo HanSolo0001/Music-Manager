@@ -10,7 +10,7 @@ namespace MusicManager.Models
     {
         public Artist()
         {
-            Songs = new List<AlbumSong>();
+            Songs = new List<Song>();
         }
 
         /// <summary>
@@ -21,6 +21,9 @@ namespace MusicManager.Models
         [Required, StringLength(100)]
         public string ArtistName { get; set; }
 
-        public ICollection<AlbumSong> Songs { get; set; }
+        /// <summary>
+        /// Navigation property linking the song class to the artist class.
+        /// </summary>
+        public virtual ICollection<Song> Songs { get; set; }
     }
 }
