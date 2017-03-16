@@ -20,14 +20,17 @@ namespace MusicManager.Controllers
 
         // POST: Songs
         [HttpPost]
-        public ActionResult Add(SongDatabase song)
+        public ActionResult Add(SongDatabase songs)
         {
-            using (var songs = new SongDatabase)
+            using (var context = new SongDatabase)
             {
-                var music = new AlbumSong { s => s.Song, s => s.Album, s => s.Artist };
-            }
+                var s = new Song
+                {
+                    
+                }
+            };
 
-            SongDatabase.Song.Add(song);
+            SongDatabase.Songs.Add(s);
             SongDatabase.SaveChanges();
 
                 return View();
