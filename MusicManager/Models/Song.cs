@@ -12,7 +12,7 @@ namespace MusicManager.Models
     {
         public Song()
         {
-            Albums = new List<Album>();
+            Album = new List<Album>();
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace MusicManager.Models
         /// <summary>
         /// Navigation property linking the album class to the song class.
         /// </summary>
-        public virtual ICollection<Album> Albums { get; set; }
+        public virtual ICollection<Album> Album { get; set; }
 
         /// <summary>
         /// Navigation property linking the artist class to the song class.
