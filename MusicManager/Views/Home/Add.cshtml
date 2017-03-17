@@ -1,4 +1,4 @@
-﻿@model MusicManager.Models.AlbumSong
+﻿@model MusicManager.Models.Song
 
 @{ 
     ViewBag.Title = "Add Songs";
@@ -8,13 +8,13 @@
 
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
+    // @Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
 
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                @Html.LabelFor(m => m.Song, new { @class = "control-label" })
-                @Html.TextAreaFor(m => m.Song, new { @class = "form-control" })
+                @Html.LabelFor(m => m.SongName, new { @class = "control-label" })
+                @Html.TextAreaFor(m => m.SongName, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Artist, new { @class = "control-label" })

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-using MusicManager.Context;
 using MusicManager.Models;
 
 namespace MusicManager.Controllers
@@ -26,14 +25,14 @@ namespace MusicManager.Controllers
             {
                 var s = new Song
                 {
-                    
+
                 }
             };
 
             SongDatabase.Songs.Add(s);
             SongDatabase.SaveChanges();
 
-                return View();
+            return View();
         }
 
         // GET: Songs/Edit/5
