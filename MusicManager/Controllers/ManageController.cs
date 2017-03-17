@@ -88,7 +88,7 @@ namespace MusicManager.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await SignInManager.SignInAsync(user, isPersistent: true, rememberBrowser: false);
                 }
                 message = ManageMessageId.RemoveLoginSuccess;
             }

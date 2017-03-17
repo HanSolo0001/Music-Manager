@@ -15,13 +15,8 @@ namespace MusicManager.Controllers
 
         public ActionResult Music()
         {
-            ViewBag.Message = "Below are your current playlists. Click on one to view the songs and artists. Alternatively, you can delete a playlist, or add a new playlist.";
+            ViewBag.Message = "Below is your current playlist. You can add, edit, and delete songs, as well as add album names, artists, duration of the song, and check to see if the song in included in the total minutes that is shown at the top of the playlist.";
             
-            return View();
-        }
-
-        public ActionResult Add()
-        {
             return View();
         }
 

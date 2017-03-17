@@ -11,28 +11,36 @@ namespace MusicManager.Controllers
     public class MusicController : Controller
     {
         // SongDatabase db = new SongDatabase();
+
         // GET: Songs
         public ActionResult Music()
         {
                 return View();
         }
 
+        // GET: form to add songs to database by clicking add button
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+
         // POST: Songs
         [HttpPost]
         public ActionResult Add(SongDatabase songs)
         {
-            using (var context = new SongDatabase)
-            {
-                var s = new Song
-                {
+            //using (var context = new SongDatabase)
+            //{
+            //    var s = new Song
+            //    {
 
-                }
-            };
+            //    }
+            //};
 
-            SongDatabase.Songs.Add(s);
-            SongDatabase.SaveChanges();
+            //SongDatabase.Songs.Add(s);
+            //SongDatabase.SaveChanges();
 
-            return View();
+            return View(songs);
         }
 
         // GET: Songs/Edit/5
