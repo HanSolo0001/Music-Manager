@@ -26,21 +26,17 @@ namespace MusicManager.Controllers
         }
 
         // POST: Songs
-        [HttpPost]
-        public ActionResult Add(SongDatabase songs)
+       [HttpPost]
+        public ActionResult Add(Song songs)
         {
-            //using (var context = new SongDatabase)
-            //{
-            //    var s = new Song
-            //    {
+            if(ModelState.IsValid)
+            {
 
-            //    }
-            //};
+            }
+            SongDatabase.Songs.Add(songs);
+            SongDatabase.SaveChanges();
 
-            //SongDatabase.Songs.Add(s);
-            //SongDatabase.SaveChanges();
-
-            return View(songs);
+            return RedirectToAction("Music");
         }
 
         // GET: Songs/Edit/5
