@@ -22,3 +22,52 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Adjust margin to align Add button to top right */
+#addButton {
+    margin: 1% 90% 1%;
+    
+}
+
+/* Adjust color to white on Add button */
+.addButton {
+    color: #ffffff;
+    text-decoration: none;
+    
+}
+
+/* Media Queries  */
+@media screen and (min-width: 320px)
+{
+    #addButton {margin: 3% 65%} 
+}
+
+@media screen and (min-width: 768px)
+{
+    #addButton {margin: 3% 85%} 
+}
+
+@media screen and (min-width: 1024px)
+{
+    #addButton {margin: 3% 90%} 
+}
+
+@media screen and (min-width: 320px) and (orientation: landscape)
+{
+    #addButton {margin: 3% 80%}
+}
+
+@media screen and (min-width: 600px) and (orientation: landscape)
+{
+    #addButton {margin: 3% 80%} 
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape)
+{
+    #addButton {margin: 3% 90%} 
+}
+
+@media screen and (min-width: 1350px) and (orientation: landscape)
+{
+    #addButton {margin: 3% 100%} 
+}

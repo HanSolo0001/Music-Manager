@@ -5,14 +5,14 @@ namespace MusicManager.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MusicManager.SongDatabase>
+    internal sealed class Configuration : DbMigrationsConfiguration<MusicManager.Context.SongDatabase>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(MusicManager.SongDatabase context)
+        protected override void Seed(MusicManager.Context.SongDatabase context)
         {
             //  This method will be called after migrating to the latest version.
 

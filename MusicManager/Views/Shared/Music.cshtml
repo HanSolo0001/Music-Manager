@@ -1,0 +1,11 @@
+﻿@model MusicManager.Models.Song
+
+@{
+    ViewBag.Title = "Music";
+}
+
+<div class="container body-content" id="addButton">
+    <button type="button" class="btn btn-success btn-lg margin-right"><span class="glyphicon glyphicon-plus"></span>@Html.ActionLink("Add", "Add", "Music", null, new { @class="addButton" })</button>
+</div>
+
+<h3>@ViewBag.Message</h3>

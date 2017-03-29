@@ -5,17 +5,22 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using MusicManager.Models;
+using MusicManager.Context;
 
 namespace MusicManager.Controllers
 {
     public class MusicController : Controller
     {
-        // SongDatabase db = new SongDatabase();
+        SongDatabase db = new SongDatabase();
 
         // GET: Songs
+        [HttpGet]
         public ActionResult Music()
         {
-                return View();
+            var songs = db.Songs                
+                .ToList();
+
+            return View(songs);
         }
 
         // GET: form to add songs to database by clicking add button
@@ -27,14 +32,10 @@ namespace MusicManager.Controllers
 
         // POST: Songs
        [HttpPost]
-        public ActionResult Add(Song songs)
+        public ActionResult Add(Song song)
         {
-            if(ModelState.IsValid)
-            {
-
-            }
-            SongDatabase.Songs.Add(songs);
-            SongDatabase.SaveChanges();
+                db.Songs.Add(song);
+                db.SaveChanges();
 
             return RedirectToAction("Music");
         }
