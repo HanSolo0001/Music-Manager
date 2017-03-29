@@ -25,15 +25,19 @@ textarea {
 
 /* Adjust margin to align Add button to top right */
 #addButton {
-    margin: 1% 90% 1%;
-    
+    margin: 1% 90% 1%;  
+}
+
+/* Remove text underline from hyperlink hover */
+#addButton a:hover {
+    text-decoration: none;
+    color: antiquewhite;
 }
 
 /* Adjust color to white on Add button */
 .addButton {
     color: #ffffff;
     text-decoration: none;
-    
 }
 
 /* Media Queries  */
