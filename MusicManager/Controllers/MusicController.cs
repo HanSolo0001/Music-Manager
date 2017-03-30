@@ -17,10 +17,10 @@ namespace MusicManager.Controllers
         [HttpGet]
         public ActionResult Music()
         {
-            var song = db.Songs                
+            var songs = db.Songs                
                 .ToList();
 
-            return View(song);
+            return View(songs);
         }
 
         // GET: form to add songs to database by clicking add button
