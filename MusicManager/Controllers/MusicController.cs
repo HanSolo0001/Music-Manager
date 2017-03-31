@@ -15,7 +15,7 @@ namespace MusicManager.Controllers
 
         // GET: Songs
         [HttpGet]
-        public ActionResult Music()
+        public ActionResult Index()
         {
             List<Song> songs = db.Songs                
                 .ToList();
@@ -37,7 +37,7 @@ namespace MusicManager.Controllers
                 db.Songs.Add(song);
                 db.SaveChanges();
 
-            return RedirectToAction("Music");
+            return RedirectToAction("Index");
         }
 
         // GET: Songs/Edit/5
