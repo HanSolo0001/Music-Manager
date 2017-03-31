@@ -7,11 +7,14 @@ using System.Web;
 
 namespace MusicManager.Models
 {
-    /// <summary>
-    /// This is the song of the music for the playlist, and will be logged into the Music Manager app.
-    /// </summary>
     public class Song
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Song()
+        { }
+
         /// <summary>
         ///  The Id of the song.
         /// </summary>

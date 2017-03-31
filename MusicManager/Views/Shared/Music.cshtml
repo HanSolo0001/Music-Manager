@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MusicManager.Models.Song>
+﻿@model List<MusicManager.Models.Song>
 
 @{
     ViewBag.Title = "Music";
@@ -9,3 +9,34 @@
 </div>
 
 <h3>@ViewBag.Message</h3>
+
+<table class="table">
+    <tr>
+        <th>SongId</th>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Duration</th>
+        <th>&nbsp;</th>
+    </tr>
+    @foreach (var song in Model)
+    {
+        <tr>
+            <td>@song.SongId</td>
+            <td>@song.SongName</td>
+            <td>@song.ArtistName</td>
+            <td>@song.AlbumName</td>
+            <td>@song.Duration</td>
+            <td>
+                <div class="pull-right">
+                    <a href="@Url.Action("Edit", new { id = song.SongId })" class="btn btn-warning btn-sm margin-right">
+                        <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
+                    </a>
+                    <a href="@Url.Action("Delete", new { id = song.SongId })" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    }
+</table>

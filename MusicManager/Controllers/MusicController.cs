@@ -17,7 +17,7 @@ namespace MusicManager.Controllers
         [HttpGet]
         public ActionResult Music()
         {
-            var songs = db.Songs                
+            List<Song> songs = db.Songs                
                 .ToList();
 
             return View(songs);
