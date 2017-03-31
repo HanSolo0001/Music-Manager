@@ -26,7 +26,7 @@
             <td>@song.SongName</td>
             <td>@song.ArtistName</td>
             <td>@song.AlbumName</td>
-            <td>@song.Duration</td>
+            <td>@song.Duration.ToString("0.00")</td>
             <td>
                 <div class="pull-right">
                     <a href="@Url.Action("Edit", new { id = song.SongId })" class="btn btn-warning btn-sm margin-right">
