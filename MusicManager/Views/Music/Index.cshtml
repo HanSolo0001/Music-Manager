@@ -12,7 +12,7 @@
 
 <table class="table">
     <tr>
-        <th>SongId</th>
+        <th>No.</th>
         <th>Song</th>
         <th>Artist</th>
         <th>Album</th>
@@ -22,17 +22,15 @@
     @foreach (var song in Model)
     {
         <tr>
-            <td>@song.SongId</td>
+            <td>@song.Id</td>
             <td>@song.SongName</td>
             <td>@song.ArtistName</td>
             <td>@song.AlbumName</td>
             <td>@song.Duration.ToString("0.00")</td>
             <td>
-                <div class="pull-right">
-                    <a href="@Url.Action("Edit", new { id = song.SongId })" class="btn btn-warning btn-sm margin-right">
-                        <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
-                    </a>
-                    <a href="@Url.Action("Delete", new { id = song.SongId })" class="btn btn-danger btn-sm">
+                <div class="pull-right">                   
+                    <button class="btn btn-warning btn-sm margin-right"><span class="glyphicon glyphicon-edit"></span><span class="hidden-xs">@Html.ActionLink("Edit", "Edit", "Music", new { id = @song.Id })</span></button>
+                    <a href="@Url.Action("Delete", new { id = song.Id })" class="btn btn-danger btn-sm">
                         <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
                     </a>
                 </div>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using MusicManager.Models;
 using MusicManager.Context;
+using System.Net;
 
 namespace MusicManager.Controllers
 {
@@ -23,14 +24,14 @@ namespace MusicManager.Controllers
             return View(songs);
         }
 
-        // GET: form to add songs to database by clicking add button
+        // GET: Songs/Add/5
         [HttpGet]
         public ActionResult Add()
         {
             return View();
         }
 
-        // POST: Songs
+        // POST: Songs/Add/5
        [HttpPost]
         public ActionResult Add(Song song)
         {
@@ -41,9 +42,19 @@ namespace MusicManager.Controllers
         }
 
         // GET: Songs/Edit/5
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Song song = db.Songs.Find(id);
+            if (song == null)
+            {
+                return HttpNotFound();
+            }
+            return View(song);
         }
 
         // POST: Songs/Edit/5

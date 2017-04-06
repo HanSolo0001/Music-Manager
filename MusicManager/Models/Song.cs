@@ -18,7 +18,7 @@ namespace MusicManager.Models
         /// <summary>
         ///  The Id of the song.
         /// </summary>
-        public int SongId { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         ///  The name of the song.
