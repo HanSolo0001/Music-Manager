@@ -43,18 +43,18 @@ namespace MusicManager.Controllers
 
         // GET: Songs/Edit/5
         [HttpGet]
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Song song = db.Songs.Find(id);
-            if (song == null)
+            var Song = db.Songs.Select(i => i.Id);
+            if (Song == null)
             {
                 return HttpNotFound();
             }
-            return View(song);
+            return View(Song);
         }
 
         // POST: Songs/Edit/5
