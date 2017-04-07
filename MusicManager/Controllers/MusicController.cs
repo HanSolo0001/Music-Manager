@@ -49,7 +49,7 @@ namespace MusicManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var Song = db.Songs.Select(i => i.Id == id);
+            var Song = db.Songs.Where(i => i.Id == id).FirstOrDefault();
             if (Song == null)
             {
                 return HttpNotFound();
