@@ -29,7 +29,7 @@
             <td>@song.Duration.ToString("0.00")</td>
             <td>
                 <div class="pull-right">                   
-                    <button class="btn btn-warning btn-sm margin-right"><span class="glyphicon glyphicon-edit"></span><span class="hidden-xs">@Html.ActionLink("Edit", "Edit", "Music", null, new { @class="editButton" })</span></button>
+                    <button class="btn btn-warning btn-sm margin-right"><span class="glyphicon glyphicon-edit"></span><span class="hidden-xs">@Html.ActionLink("Edit", "Edit", "Music", new { id = song.Id }, new { @class="editButton" })</span></button>
                     <a href="@Url.Action("Delete", new { id = song.Id })" class="btn btn-danger btn-sm">
                         <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
                     </a>

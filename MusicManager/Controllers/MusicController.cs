@@ -43,7 +43,7 @@ namespace MusicManager.Controllers
 
         // GET: Songs/Edit/5
         [HttpGet]
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
