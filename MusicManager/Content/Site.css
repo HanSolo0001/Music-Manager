@@ -34,10 +34,21 @@ textarea {
     color: antiquewhite;
 }
 
-/* Adjust color to white on Add button */
+/* Adjust color to white on add button */
 .addButton {
     color: #ffffff;
     text-decoration: none;
+}
+
+/* Give edit button white text color */
+.editButton {
+    color: white;
+    text-decoration: none;
+}
+
+/* Give table header neames background color */
+.tableHeaders {
+    background-color: aquamarine;
 }
 
 /* Media Queries  */

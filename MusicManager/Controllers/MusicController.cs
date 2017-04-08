@@ -59,18 +59,15 @@ namespace MusicManager.Controllers
 
         // POST: Songs/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit([Bind(Include = "ID,SongName,ArtistName,AlbumName,Duration,Exclude")] Song song)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                db.Entry(song).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(song);
         }
 
         // GET: Songs/Delete/5
