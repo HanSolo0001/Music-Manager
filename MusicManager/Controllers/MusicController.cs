@@ -73,23 +73,26 @@ namespace MusicManager.Controllers
         // GET: Songs/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var Song = db.Songs.Where(i => i.Id == id).FirstOrDefault();
+            if (Song == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Song);
         }
 
         // POST: Songs/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Song song)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
+                Song Song = db.Songs.Where(i => i.Id == id).FirstOrDefault();
+                db.Songs.Remove(Song);
+                db.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

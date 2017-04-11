@@ -25,10 +25,10 @@ textarea {
 
 /* Adjust margin to align Add button to top right */
 #addButton {
-    margin: 1% 90% 1%;  
+    margin: 1% 90% 1%;
 }
 
-/* Remove text underline from hyperlink hover */
+/* Remove text underline from hyperlink hover and change color */
 #addButton a:hover {
     text-decoration: none;
     color: antiquewhite;
@@ -41,14 +41,36 @@ textarea {
 }
 
 /* Give edit button white text color */
-.editButton {
+#editButton {
     color: white;
     text-decoration: none;
 }
 
+/* Give color to edit button on hover */
+.pull-right #editButton a:hover {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+/* Change color and remove underline */
+#deleteButton {
+    color: white;
+    text-decoration: none;
+}
+
+/* Give color to delete button on hover */
+#deleteButton a:hover {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
 /* Give table header neames background color */
-.tableHeaders {
+.table .tableHeaders {
     background-color: aquamarine;
+}
+
+.table .tr {
+    border-top: 1px solid #dddddd;
 }
 
 /* Media Queries  */
