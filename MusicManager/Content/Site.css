@@ -52,7 +52,7 @@ textarea {
     color: antiquewhite;
 }
 
-/* Change color and remove underline */
+/* Change color and remove underline on delete button */
 #deleteButton {
     color: white;
     text-decoration: none;
