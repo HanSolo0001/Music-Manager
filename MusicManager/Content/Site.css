@@ -47,7 +47,7 @@ textarea {
 }
 
 /* Give color to edit button on hover */
-.pull-right #editButton a:hover {
+#editButton a:hover {
     text-decoration: none;
     color: antiquewhite;
 }
