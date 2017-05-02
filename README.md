@@ -1,2 +1,2 @@
 # Music-Manager
-This is a web app that will allow a user to manage a mock music library. I created this project for the 2017 January-March C# .Net Code Louisville session.
+I created this web app using C# .Net and Entity Framework. With this app, a user can log into and create a mock music playlist. This is a full CRUD app, which can write songs to the database, update current songs, and delete songs from the playlist.
